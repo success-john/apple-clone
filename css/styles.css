@@ -3,6 +3,8 @@
   margin:0;
   box-sizing: border-box;
 }
+
+/* base styles */
 body{
   line-height: 1.8;
   font-family:Arial, Helvetica, sans-serif;
@@ -24,26 +26,31 @@ a:hover{
   text-decoration:underline;
 }
 
-
-h2{
-  font-size:35px;
-  line-height: 1;
-  margin-bottom:1rem;
-}
-
 img{
   width:100%;
   height:auto;
 }
 
+.blue{
+color:blue;
+}
+
+.grey{
+  color:#333;
+}
+
+.grey:hover{
+  color:blue;
+}
 
 /* navigation */
+#navbar{
+  font-size: .8rem;
+}
 
 #navbar .topnav{
   background:#444;
-  padding:0.8rem 2rem;
-  
-
+  padding:0.8rem 4rem;
 }
 #navbar .topnav a{
   color:#fff;
@@ -58,8 +65,14 @@ img{
   justify-content: space-around;
 }
 
-#navbar .bottom-nav a{
+
+#navbar .bottom-nav a,
+#navbar .bottom-nav-mobile a{
   color:#faf7f7;
+}
+
+#navbar .bottom-nav-mobile{
+  display: none;
 }
 
 .copy{
@@ -78,31 +91,43 @@ padding:0.4rem;
   justify-content:center;
   text-align:center;
   align-items:center;
-  height:70vh;
-  padding:1rem;
-
+  height:80vh;
+  padding:2rem 1rem;
+  width:60%;
+  margin:auto;
+  
 }
 
 #showcase .showcase-content p{
   font-size:18px;
+  margin-top:1rem;
   color:#444;
-  margin-bottom:1px solid red;
 }
 
 /* Pricing */
+#pricing{
+  margin-top:1rem;
+}
 
 #pricing .price-text{
   margin:1rem 0;
 }
+
 #pricing .mac-models .mac,
 #pricing .ipad-model .ipad{
-  border:1px solid #faf7f7;
+  border:1px solid #472f2f;
   background:#faf7f7;
   margin-bottom:0.8rem;
   text-align:center;
   padding: 0.5rem 1rem;
 }
 
+#pricing .mac-models a,
+#pricing .ipad-model a{
+text-decoration: none;
+}
+
+/* exchange */
 #exchange{
   margin:20px 0px;
   background: #f5f5f5;
@@ -114,6 +139,7 @@ padding:0.4rem;
   padding:1rem 0;
 }
 
+/* about */
 #about .about-content{
   text-align:left;
   padding:1rem 0 1rem 2rem;
@@ -121,8 +147,10 @@ padding:0.4rem;
 
 #about .about-content a{
   display:inline-block;
+  color:#333;
 }
 
+/* homepod */
 #home-pod{
 margin:20px 0px;
 background:#f5f5f5;
@@ -134,13 +162,14 @@ padding:1rem;
   margin:0 0.8rem;
 }
 
+/* apple-tv */
 #apple-tv{
   margin:20px 0px;
   background:black;
   color:#fff;
   padding:2rem;
+  text-align: center;
 }
-
 
 #apple-tv .music-text{
   padding:0.9rem 0;
@@ -148,26 +177,28 @@ padding:1rem;
 
 #apple-tv .music-text .btn{
   color:#fff;
-  background:pink;
+  background:red;
   border-radius:50px;
-  padding:0 50px;
+  display: block;
+  text-align: center;
+  padding:0 20px;
  
 }
 
 #apple-tv .music-text a{
-  display:block;
   font-size:1.2rem;
   margin-bottom:0.7rem;
+  text-align: center;
 }
 
 #accessories{
   background: #f5f5f5;
-  margin:20px 0;
   padding:1rem;
 
 }
 
 
+/* happenings */
 #happenings{
   background:#f5f5f5;
   margin:20px 0;
@@ -189,6 +220,8 @@ padding:1rem;
   margin:0.7rem 0;
 }
 
+/* college and opportunities */
+
 #college,
 #opportunities{
   margin:1rem 0;
@@ -206,6 +239,7 @@ padding:1rem;
   margin:0.7rem 0;
 }
 
+/* footer */
 #footer .footer-nav{
   padding:1rem;
   background: #f5f5f5;
@@ -213,6 +247,12 @@ padding:1rem;
 
 #footer .footer-nav p{
   font-size:15px;
+}
+
+#footer .footer-nav a{
+  color:#333;
+  font-size:12px;
+
 }
 
 #footer .footer-nav .conditions{
@@ -225,23 +265,60 @@ padding:1rem;
   text-align:justify
 }
 
-.apple-store{
+#footer .apple-store{
   line-height:1;
   padding:2rem 0;
   border-bottom:1px solid #333;
 }
 
 
+
+
 @media(max-width:768px){
-  #accessories .accessories-img{
-    position:relative;
-    left:70px;
+  h1{
+    font-size:35px;
+  }
+
+  h2{
+    font-size:30px;
+  }
+  #showcase{
+    width:100%;
+    text-align: center;
+    height:85vh;
+  }
+
+  #navbar .bottom-nav-mobile{
+  background:#333;
+  padding:0.8rem 2rem;
+  display:flex;
+  justify-content: space-around;
+  }
+
+  #navbar .bottom-nav{
+    display: none;
   }
   
-  #home-pod .pod-img{
-    position: relative;
-    left:70px;
+  
+  #pricing .mac-models,
+  #pricing .ipad-model{
+    display:flex;
+    flex-wrap:wrap;
   }
+
+  #pricing .mac-models .mac,
+  #pricing .ipad-model .ipad{
+  flex-basis:47%;
+  justify-content:space-between;
+  margin-left: .55rem;
+  border:1px solid #faf7f7;
+  }
+
+  #collections{
+    margin:1rem 0;
+    padding:.8rem;
+  }
+
   
   #footer .footer-nav a{
     display: inline-block;
@@ -249,11 +326,22 @@ padding:1rem;
   }
   
   #footer .footer-nav p{
-    font-size:16px
+    font-size:13px
   }
-  
+
+  .apple-store-mobile .categories{
+    display:flex;
+    justify-content: space-between;
+    border-bottom:1px solid;
+    padding:.22rem;
+  }
+ 
   .apple-store div{
     margin-bottom:0.5rem;
     
+  }
+
+  .apple-store{
+    display: none;
   }
 }
